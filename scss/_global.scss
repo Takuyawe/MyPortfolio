@@ -1,0 +1,52 @@
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+**::after {
+  box-sizing: inherit;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@include breakpoint-down(medium) {
+  html,
+  body,
+  * {
+    font-size: 13px;
+  }
+}
+@include breakpoint-down(small) {
+  html,
+  body,
+  * {
+    font-size: 10px;
+  }
+}
+
+// visibitly
+
+.hide-for-mobile {
+  //hide for tablet and mobile
+  @include breakpoint-down(small) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  // hide for desktop viewport wdiths
+  @include breakpoint-up(small) {
+    display: none !important;
+  }
+}

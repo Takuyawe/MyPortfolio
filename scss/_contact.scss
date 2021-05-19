@@ -1,0 +1,83 @@
+.contact {
+  min-height: 80vh;
+  &__title {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 4px gray;
+
+    > h2 {
+      font-size: $font-lg;
+
+      @include breakpoint-down(small) {
+        margin-top: 4rem;
+      }
+    }
+  }
+  &__intro {
+    text-align: center;
+    margin: 2rem;
+    > p {
+      font-size: $font-sm;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+
+    &__input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 5.5rem;
+
+      > label {
+        font-size: $font-med;
+        align-self: start;
+      }
+
+      > input {
+        height: 2rem;
+        width: 30rem;
+        font-size: $font-sm;
+
+        &::placeholder {
+          font-size: $font-sm;
+        }
+      }
+    }
+    &__textarea {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > label {
+        font-size: $font-med;
+        align-self: start;
+      }
+      > textarea {
+        height: 12rem;
+        width: 30rem;
+        font-size: $font-sm;
+
+        &::placeholder {
+          font-size: $font-sm;
+        }
+      }
+    }
+
+    &__button {
+      margin-top: 1.5rem;
+      > button {
+        height: 2rem;
+        width: 30rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

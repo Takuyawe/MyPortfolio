@@ -1,0 +1,14 @@
+.footer {
+  margin-top: 5rem;
+  &__text {
+    height: 8vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+
+    > h2 {
+      color: white;
+      font-size: $font-med;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.header {
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+
+  &__left {
+    display: flex;
+    z-index: 5;
+    align-items: center;
+    margin-left: 1.5rem;
+    > span {
+      font-size: 1.5rem;
+      margin: 1rem;
+      color: white;
+    }
+    > a > h3 {
+      font-size: 1.5rem;
+      color: white;
+
+      @include breakpoint-down(small) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__right {
+    margin-right: 1rem;
+    > a {
+      font-size: 1.5rem;
+      color: white;
+      text-decoration: none;
+      margin: 0.75rem;
+      transition: color 0.25s ease-in-out;
+
+      &:hover {
+        color: $lightBlue;
+      }
+    }
+  }
+
+  &__bento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+    height: 22px;
+    width: 22px;
+    margin-right: 1rem;
+    z-index: 5;
+    cursor: pointer;
+
+    &.cross {
+      > .dot:nth-child(2),
+      .dot:nth-child(4),
+      .dot:nth-child(6),
+      .dot:nth-child(8) {
+        opacity: 0;
+      }
+    }
+
+    &:hover > .dot {
+      opacity: 0.9;
+    }
+  }
+}
+
+.modal {
+  display: none;
+  &.open {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent; /* Fallback color */
+  }
+  &__links {
+    display: block;
+    height: 80%;
+    background-color: black;
+
+    > ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      > li {
+        list-style: none;
+        margin: 2rem;
+        > a {
+          font-size: $font-lg;
+          color: white;
+          transition: all 0.2s ease-in;
+          &:hover {
+            color: $lightBlue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+}
